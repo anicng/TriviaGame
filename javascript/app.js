@@ -1,13 +1,13 @@
 $(document).ready(
     function triviaGame() {
-        var number = 3;
+        var time = 60;
         var intervalId;
 
         // Timer decrement
         function decrement() {
-            number--;
-            $("#time-countdown-text").text(number);
-            if (number === 0) {
+            time--;
+            $("#time-countdown-text").text(time);
+            if (time === 0) {
                 stop();
             }
         };
@@ -28,31 +28,31 @@ $(document).ready(
         $("#startButton").click(function () {
             window.location.href = "index.html";
             run();
-            console.log(number);
+            console.log(time);
             console.log(intervalId);
         });
 
         var correctCount = 0;
         var incorrectCount = 0;
 
-
-        // function selectedRadioValue() {
-        //     var radioValue = $("input").attr("value");
-        //     console.log(radioValue);
-        //     if (radioValue === "correct") {
-        //         correctCount++;
-        //         $("correctAnswers").text(correctCount);
-        //     }
-        // };
-
         function selectedRadioValue() {
             var radioValue = $("input[type=radio][name=question1]:checked").val();
             console.log(radioValue);
+            // if selected the correct answer correctCount++
+            if (radioValue === "correct") {
+                correctCount++;
+                console.log(correctCount);
+            }
         }
 
         $("input").on("click", function () {
             selectedRadioValue();
         });
 
+        $("#submitButton").on("click",function(){
+            $("correctCountText").text(correctCount);
+            console.log (correctCount);
+        })
+        // when submit button hit, show correctCountText and incorrectCountText
 
     });
