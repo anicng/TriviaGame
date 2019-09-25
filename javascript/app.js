@@ -1,6 +1,6 @@
 $(document).ready(
     function triviaGame() {
-        var time = 30;
+        var time = 3;
         var intervalId;
 
         // Timer decrement
@@ -73,7 +73,19 @@ $(document).ready(
             $(".scoreScreen").show(600);
         });
 
-        // When time = 0, do the samething as #submitButton
+        // When time = 0, do the samething as #submitButton 
+            // function timeUp() {
+            //     if (time === 0) {
+            //         gameend();
+            //         // hide form and show score
+            //         $("form").hide(500, gameend());
+            //         $(".scoreScreen").show();
+            //         console.log("times up");
+            //     };
+            // };
+            // timeUp();
 
+
+        // Probably a better idea to dynamically generate questions instead of typing them out in html...
 
     });
