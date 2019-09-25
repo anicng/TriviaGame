@@ -73,6 +73,8 @@ $(document).ready(
             $(".scoreScreen").show(600);
         });
 
+        // None selected radios are count as incorrectCounts
+
         // When time = 0, do the samething as #submitButton 
             // function timeUp() {
             //     if (time === 0) {
