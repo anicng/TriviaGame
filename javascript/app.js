@@ -1,6 +1,6 @@
 $(document).ready(
     function triviaGame() {
-        var time = 60;
+        var time = 2;
         var intervalId;
 
         // Timer decrement
@@ -23,10 +23,15 @@ $(document).ready(
         function stop() {
             clearInterval(intervalId);
         };
+        $(".question-container").hide(0);
+        $(".scoreScreen").hide(0);
 
         // When click on startButton, go to question page and start timer
         $("#startButton").click(function () {
-            window.location.href = "index.html";
+            // window.location.href = "index.html";
+            $(".start-container").hide(200);
+            $(".question-container").show(300);
+
             run();
             console.log(time);
             console.log(intervalId);
@@ -63,12 +68,12 @@ $(document).ready(
             e.preventDefault();
             stop();
             gameend();
-            $("form").hide(500,gameend());
+            // hide form and show score
+            $("form").hide(500, gameend());
             $(".scoreScreen").show(600);
         });
 
         // When time = 0, do the samething as #submitButton
 
-        // hide form and show score
 
     });

@@ -13,54 +13,78 @@
 </head>
 
 <body>
-    <div class="jumbotron text-center h1">Trivia Time!</div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col text-center">
-                <div>
-                    <h2>Time Left: <span id="time-countdown-text"></span></h2>
-                </div>
-                <br>
-                <form id="triviaQuestions">
-                    <div>
-                        <h4>Question1: Whare female elephants called?</h4>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="1" name="question1" class="custom-control-input" value="incorrect">
-                            <label class="custom-control-label" for="1">Bulls</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="2" name="question1" class="custom-control-input" value="correct">
-                            <label class="custom-control-label" for="2">Cows</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="3" name="question1" class="custom-control-input" value="incorrect">
-                            <label class="custom-control-label" for="3">Dams</label>
+    <div class="start-container">
+        <div class="row justify-content-center">
+            <div class="col-9">
+                <div class="card pt-4">
+                    <img src="https://i2.wp.com/meebily.com/wp-content/uploads/2018/01/animal-trivia-question-and-answers.jpg?fit=600%2C400&ssl=1"
+                        class="card-img-top" alt="Animal-Trivia-Image">
+
+                    <div class="card-body">
+                        <h1 class="card-title text-center">
+                            Trivia Time!
+                        </h1>
+
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-warning" id="startButton">Start!</button>
                         </div>
                     </div>
-                    <br>
-                    <div>
-                        <h4>Question2</h4>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="a" name="question2" class="custom-control-input">
-                            <label class="custom-control-label" for="a">Toggle this custom radio</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="b" name="question2" class="custom-control-input">
-                            <label class="custom-control-label" for="b">Or toggle this other custom
-                                radio</label>
-                        </div>
-                    </div>
-                    <br>
-                    <button class="btn btn-primary" type="submit" id="submitButton">Submit</button>
-
-                </form>
-
-                <div class="scoreScreen">
-                    <h2>Correct <span id="correctCountText"></span></h2>
-                    <h2>Incorrect <span id="incorrectCountText"></span></h2>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="question-container">
+        <div class="jumbotron text-center h1">Trivia Time!</div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col text-center">
+                    <div>
+                        <h2>Time Left: <span id="time-countdown-text"></span></h2>
+                    </div>
+                    <br>
+                    <form id="triviaQuestions">
+                        <div>
+                            <h4>Question1: Whare female elephants called?</h4>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="1" name="question1" class="custom-control-input"
+                                    value="incorrect">
+                                <label class="custom-control-label" for="1">Bulls</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="2" name="question1" class="custom-control-input"
+                                    value="correct">
+                                <label class="custom-control-label" for="2">Cows</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="3" name="question1" class="custom-control-input"
+                                    value="incorrect">
+                                <label class="custom-control-label" for="3">Dams</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <h4>Question2</h4>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="a" name="question2" class="custom-control-input">
+                                <label class="custom-control-label" for="a">Toggle this custom radio</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="b" name="question2" class="custom-control-input">
+                                <label class="custom-control-label" for="b">Or toggle this other custom
+                                    radio</label>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" type="submit" id="submitButton">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scoreScreen">
+        <h2>Correct <span id="correctCountText"></span></h2>
+        <h2>Incorrect <span id="incorrectCountText"></span></h2>
     </div>
     <script type="text/javascript" src="javascript/app.js"></script>
 
