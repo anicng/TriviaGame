@@ -35,6 +35,7 @@ $(document).ready(
         var correctCount = 0;
         var incorrectCount = 0;
 
+        // check for selectedRadioValue to be correct or not
         function selectedRadioValue() {
             var radioValue = $("input[type=radio][name=question1]:checked").val();
             console.log(radioValue);
@@ -42,17 +43,23 @@ $(document).ready(
             if (radioValue === "correct") {
                 correctCount++;
                 console.log(correctCount);
+            }else{
+                incorrectCount++;
             }
         }
 
-        $("input").on("click", function () {
+        // $("input").on("click", function () {
+        //     selectedRadioValue();
+        // });
+
+        // when submit button hit, show correctCountText and incorrectCountText
+        $("#submitButton").on("click",function(e){
+            e.preventDefault();
             selectedRadioValue();
+            $("#correctCountText").text(correctCount);
+            $("#incorrectCountText").text(incorrectCount);
+            stop();
         });
 
-        $("#submitButton").on("click",function(){
-            $("correctCountText").text(correctCount);
-            console.log (correctCount);
-        })
-        // when submit button hit, show correctCountText and incorrectCountText
 
     });
