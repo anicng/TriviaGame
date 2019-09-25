@@ -1,6 +1,6 @@
 $(document).ready(
     function triviaGame() {
-        var time = 3;
+        var time = 30;
         var intervalId;
 
         // Timer decrement

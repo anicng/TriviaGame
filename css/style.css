@@ -5,3 +5,8 @@
 .card {
     border:none;
 }
+
+.jumbotron {
+    background-color: yellowgreen;
+    color: aliceblue;
+}
