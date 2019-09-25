@@ -1,6 +1,6 @@
 $(document).ready(
     function triviaGame() {
-        var time = 2;
+        var time = 30;
         var intervalId;
 
         // Timer decrement
@@ -23,6 +23,7 @@ $(document).ready(
         function stop() {
             clearInterval(intervalId);
         };
+        // hide .question-container and .scoreScreen when game
         $(".question-container").hide(0);
         $(".scoreScreen").hide(0);
 
@@ -42,7 +43,7 @@ $(document).ready(
 
         // check for selectedRadioValue to be correct or not
         function selectedRadioValue() {
-            var radioValue = $("input[type=radio][name=question1]:checked").val();
+            var radioValue = $("input[type=radio]:checked").val();
             console.log(radioValue);
             // if selected the correct answer correctCount++
             if (radioValue === "correct") {
@@ -53,12 +54,11 @@ $(document).ready(
             }
         }
 
-        // $("input").on("click", function () {
-        //     selectedRadioValue();
-        // });
+        $("input").on("click", function () {
+            selectedRadioValue();
+        });
 
         function gameend() {
-            selectedRadioValue();
             $("#correctCountText").text(correctCount);
             $("#incorrectCountText").text(incorrectCount);
         };
