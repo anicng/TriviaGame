@@ -43,7 +43,7 @@ $(document).ready(
             if (radioValue === "correct") {
                 correctCount++;
                 console.log(correctCount);
-            }else{
+            } else {
                 incorrectCount++;
             }
         }
@@ -52,14 +52,23 @@ $(document).ready(
         //     selectedRadioValue();
         // });
 
-        // when submit button hit, show correctCountText and incorrectCountText
-        $("#submitButton").on("click",function(e){
-            e.preventDefault();
+        function gameend() {
             selectedRadioValue();
             $("#correctCountText").text(correctCount);
             $("#incorrectCountText").text(incorrectCount);
+        };
+
+        // when submit button hit, show correctCountText and incorrectCountText
+        $("#submitButton").on("click", function (e) {
+            e.preventDefault();
             stop();
+            gameend();
+            $("form").hide(500,gameend());
+            $(".scoreScreen").show(600);
         });
 
+        // When time = 0, do the samething as #submitButton
+
+        // hide form and show score
 
     });
