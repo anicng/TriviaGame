@@ -70,6 +70,7 @@ $(document).ready(
             $("form").hide(500, gameend());
             $(".scoreScreen").show(600);
         });
+        // Need to restrict radio button to be only clicked once.
 
         // None selected radios are count as incorrectCounts
 
