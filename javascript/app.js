@@ -42,8 +42,8 @@ $(document).ready(
         var incorrectCount = 0;
 
         // check for selectedRadioValue to be correct or not
-        function selectedRadioValue() {
-            var radioValue = $("input[type=radio]:checked").val();
+        $("input").on("click", function selectedRadioValue() {
+            var radioValue = $(this).attr("value");
             console.log(radioValue);
             // if selected the correct answer correctCount++
             if (radioValue === "correct") {
@@ -52,11 +52,9 @@ $(document).ready(
             } else {
                 incorrectCount++;
             }
-        }
-
-        $("input").on("click", function () {
-            selectedRadioValue();
         });
+         
+       
 
         function gameend() {
             $("#correctCountText").text(correctCount);
